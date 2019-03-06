@@ -14,12 +14,12 @@ Route.put('passwords', 'ForgotPasswordController.update').validator(
 
 Route.get('/files/:id', 'FileController.show')
 
+Route.resource('projects', 'ProjectController')
+  .apiOnly()
+  .validator(new Map([[['projects.store'], ['Project']]]))
+
 Route.group(() => {
   Route.post('/files', 'FileController.store')
-
-  Route.resource('projects', 'ProjectController')
-    .apiOnly()
-    .validator(new Map([[['projects.store'], ['Project']]]))
 
   Route.resource('projects.tasks', 'TaskController')
     .apiOnly()
