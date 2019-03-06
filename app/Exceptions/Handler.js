@@ -1,7 +1,7 @@
 'use strict'
 
 const Env = use('Env')
-/*const Youch = use('Youch')*/
+const Youch = use('Youch')
 const BaseExceptionHandler = use('BaseExceptionHandler')
 
 /**
@@ -23,7 +23,7 @@ class ExceptionHandler extends BaseExceptionHandler {
    * @return {void}
    */
   async handle (error, { request, response }) {
-    /*if (error.name === 'ValidationException') {
+    if (error.name === 'ValidationException') {
       return response.status(error.status).send(error.messages)
     }
 
@@ -34,7 +34,7 @@ class ExceptionHandler extends BaseExceptionHandler {
       return response.status(error.status).send(errorJSON)
     }
 
-    return response.status(error.status)*/
+    return response.status(error.status)
   }
 
   /**
